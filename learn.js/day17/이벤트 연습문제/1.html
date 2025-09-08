@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="text">원래 텍스트</p>
+    <button id="changeTextButton">텍스트 변경</button>
+    <script>
+      const buttonEl = document.querySelector("button");
+      buttonEl.addEventListener("click", () => {
+        document.querySelector("p").innerText = "바뀐 텍스트";
+      });
+    </script>
+  </body>
+</html>

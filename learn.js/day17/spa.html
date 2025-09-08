@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>History API 학습 예제</h1>
+    <p>아래 버튼을 눌러 페이지 상태를 바꾸고,</p>
+    <button onclick="loadPage('home')">home</button>
+    <button onclick="loadPage('about')">about</button>
+    <button onclick="loadPage('contact')">contact</button>
+    <div id="content">여기는 기본 홈 화면입니다.</div>
+    <script>
+      const content = document.querySelector("#content");
+      async function loadPage(page) {
+        const texts = {
+          home: "learn.js/day17/pages/home.html",
+          about: "learn.js/day17/pages/about.html",
+          contact: "learn.js/day17/pages/contact.html",
+        };
+        const res = await fetch(texts[page]);
+        content.innerHTML = await res.text();
+
+        history.pushState({ page: page }, null, `/${page}`);
+      }
+
+      window.addEventListener("popstate", function (event) {
+        console.log(event);
+        const page = event.state?.page || "home";
+        const texts = {
+          home: "여기는 홈 화면입니다.",
+          about: "이 페이지는 소개화면입니다.",
+          contact: "연락처화면입니다",
+        };
+        content.innerText = texts[page];
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="itemInput" placeholder="새 항목 입력" />
+    <button id="addItemButton">항목 추가</button>
+    <ul id="itemList"></ul>
+
+    <script>
+      const buttonEl = document.querySelector("button");
+      const ulEl = document.querySelector("ul");
+      buttonEl.addEventListener("click", (text) => {
+        const inputEl = document.querySelector('input');
+        ulEl.classList.add(text);
+      }
+    </script>
+  </body>
+</html>

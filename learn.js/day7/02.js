@@ -47,6 +47,20 @@ double = null;
 
 //
 //
+
+function fetchData(url) {
+  let result;
+  return function (callback) {
+    setTimeout(() => {
+      result = "Fetched... Success";
+      callback(result);
+    }, 1000);
+  };
+}
+
+const fetchFromNaver = fetchData("https://www.naver.com");
+fetchFromNaver((data) => console.log(data));
+
 //
 
 // 메모이제이션 패턴

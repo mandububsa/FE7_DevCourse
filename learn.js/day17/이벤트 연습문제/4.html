@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="itemList">
+      <li>항목 1</li>
+      <li>항목 2</li>
+      <li>항목 3</li>
+    </ul>
+    <script>
+      const ulEl = document.querySelector("ul");
+      ulEl.addEventListener("click", (li) => {
+        li.remove();
+      });
+    </script>
+  </body>
+</html>
