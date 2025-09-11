@@ -97,8 +97,7 @@ console.log(product); // 20
 // 이 함수의 타입을 지정하고 호출해서 배열의 최대값을 출력해보세요.
 // 함수 정의
 
-//@@@#@#@32
-const findMax = (arr: number[]): number => Math.max();
+const findMax = (arr: number[]): number => Math.max(...arr);
 
 // 함수 호출
 const max = findMax([10, 20, 30, 40]);

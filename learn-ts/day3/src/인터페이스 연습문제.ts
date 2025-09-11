@@ -81,8 +81,9 @@ interface Person {
 const per1: Person = {
   name: "ahn",
   age: 20,
-  greet() {
-    console.log(`Hello, my name is ${name}`);
+  greet(this: Person) {
+    // this:Person은 생략가능
+    console.log(`Hello, my name is ${this.name}`);
   },
 };
 
@@ -98,6 +99,19 @@ interface Rectangle extends Shape {
   width: number;
   height: number;
 }
+const circle: Circle = {
+  radius: 10,
+  area(this: Circle) {
+    return Math.PI * this.radius * this.radius;
+  },
+};
+const rectangle: Rectangle = {
+  width: 5,
+  height: 10,
+  area(this: Rectangle) {
+    return this.width * this.height;
+  },
+};
 // - `Shape`는 `area()` 메소드만 정의하고,
 // - `Circle`은 `radius` 속성을, `Rectangle`은 `width`와 `height` 속성을 추가합니다.
 
@@ -115,32 +129,32 @@ interface Address {
   zipcode: number;
 }
 
+// type Contact = Person & Address;  // 이렇게도 가능!
 interface Contact extends Person, Address {
   phone: number;
 }
-// - `Person`은 `name`과 `age`를 포함하고,
-// - `Address`는 `street`, `city`, `zipcode`를 포함합니다.
-// - 속성에 대한 자료형은 자율적으로 지정하세요.
+
+// interface는 자동 병합이 특징이기에 Person, Address를 한번에가 아닌 필요에 따라 하나씩 extends해줘도 된다.
 
 // ---
 
 // ### 9. **인터페이스에 인덱스 시그니처 사용**
 // `Dictionary`라는 인터페이스를 정의하여, 이 인터페이스는 `string` 키와 `string` 값을 가지는 객체 타입을 정의하세요.
 interface Dictionary {
-  [key: string]: string
+  [key: string]: string;
 }
+const dictionary: Dictionary = {
+  hello: "a",
+  myname: "sumin",
+};
 
 // ---
 
 // ### 10. **인터페이스를 사용한 함수 타입 정의**
-// `Operation`이라는 인터페이스를 정의하여, 두 개의 `number`를 받아 `number`를 반환하는 함수를 타입으로 정의하세요. 
+// `Operation`이라는 인터페이스를 정의하여, 두 개의 `number`를 받아 `number`를 반환하는 함수를 타입으로 정의하세요.
 // 그 후 `add`와 `subtract` 함수를 작성하여 이 인터페이스를 사용하세요.
 interface Operation {
-  func(number1, number2): number;
+  (a: number, b: number): number;
 }
-const operation: Operation = {
-  func(n1, n2) {
-
-  }
-  add = (n1, n2) => n1 + n2;
-}
+const add: Operation = (a, b) => a + b;
+const subtract: Operation = (a, b) => a - b;

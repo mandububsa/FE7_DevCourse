@@ -16,6 +16,9 @@
     throw new Error(msg);
   }
 }
+const sum = (n1: number, n2: number): number => {
+  return n1 + n2;
+};
 
 {
   // 함수 표현식
@@ -93,7 +96,6 @@
 }
 
 {
-  
   function sum(a: number | string, b: number | string): number | string {
     if (typeof a === "number" && typeof b === "number") return a + b;
     else return `${a} + ${b}`;

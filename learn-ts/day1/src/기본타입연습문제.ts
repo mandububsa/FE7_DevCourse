@@ -57,7 +57,7 @@
 // ### 9. **문제: 객체 선언**
 // `object` 타입을 사용하여 이름과 나이를 포함하는 객체를 선언하고, 이를 출력하세요.
 {
-  const obj: {} = {
+  const obj: { name: string; age: number } = {
     name: "ahn",
     age: 20,
   };
@@ -66,14 +66,6 @@
 
 // ### 10. **문제: 다양한 타입을 갖는 배열 선언**
 // `Array<string | number>` 또는 `(string | number)[]` 타입을 사용하여 숫자와 문자열이 섞인 배열을 선언하고, 이를 출력하세요.
-{
-  const arr: [string[], number[]] = {
-    name: ["a", "b", "c"],
-    age: [1, 2, 3],
-  };
-  console.log(arr);
-}
-
 {
   const arr: (string | number)[] = ["a", 1, "b", 2, "c", 3];
 }

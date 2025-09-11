@@ -2,13 +2,14 @@
 // **문제 설명**: `sumAllNumbers` 함수는 **여러 개의 숫자 배열**을 인자로 받아 각 배열의 합을 구하여 반환하는 함수입니다.
 // `rest parameter`와 `map`을 사용하여 여러 배열을 처리하고 결과를 반환해야 합니다.
 // 함수 정의
-const sumAllNumbers = (...numArrs: number[][]): number[] =>
-  numArrs.map((numArr) => numArr.reduce((acc, cur) => acc + cur, 0));
+{
+  const sumAllNumbers = (...numArrs: number[][]): number[] =>
+    numArrs.map((numArr) => numArr.reduce((acc, cur) => acc + cur, 0));
 
-// 함수 호출
-const result = sumAllNumbers([1, 2], [3, 4, 5], [6, 7]);
-console.log(result); // [3, 12, 13]
-
+  // 함수 호출
+  const result = sumAllNumbers([1, 2], [3, 4, 5], [6, 7]);
+  console.log(result); // [3, 12, 13]
+}
 // ---
 
 // ### **문제 2: 숫자 또는 문자열을 받아 그 값을 두 배로 만드는 함수**
@@ -59,7 +60,7 @@ console.log(result2); // 10
 // **문제 설명**: `intersection` 함수는 두 개의 **배열**을 받아 교차된 값들만 반환하는 함수입니다.
 // 두 배열에서 겹치는 값들을 찾아 반환해보세요.
 // 함수 정의
-const intersection = (arr1: number[], arr2: number): number[] => {
+const intersection = (arr1: number[], arr2: number[]): number[] => {
   return arr1.filter((num) => arr2.includes(num));
 };
 
@@ -72,12 +73,10 @@ console.log(result); // [2, 3]
 // ### **문제 5: 객체의 필드 값에 따라 출력 형식을 다르게 하는 함수**
 // **문제 설명**: `formatInfo` 함수는 **객체**를 받아, `name` 필드가 존재하면 `"Name: {name}"`을 출력하고, `age` 필드가 존재하면 `"Age: {age}"`를 출력합니다. 매개변수 타입을 지정하고 호출해보세요.
 // 함수 정의
-//
-//  ????
-const formatInfo = (obj: { name?: string, age? number}) => {
+const formatInfo = (obj: { name?: string; age?: number }) => {
   if (obj.name) return `Name: ${obj.name}`;
   if (obj.age) return `Age: ${obj.age}`;
-}
+};
 
 // 함수 호출
 const info = formatInfo({ name: "Alice" });
@@ -100,8 +99,7 @@ console.log(combined); // "HelloWorld"
 // **문제 설명**: `squareArray` 함수는 **숫자 배열**을 받아 그 배열의 각 값에 대해 제곱을 계산하여 새로운 배열을 반환합니다.
 // 함수 정의
 {
-  const squareArray = (arr: number[]): number[] => arr.map((num) => num*num);
-
+  const squareArray = (arr: number[]): number[] => arr.map((num) => num * num);
 
   // 함수 호출
   const result = squareArray([1, 2, 3, 4]);
@@ -124,11 +122,12 @@ console.log(combined); // "HelloWorld"
 // ---
 
 // ### **문제 9: 타입이 서로 다른 두 값을 비교하는 함수**
-// **문제 설명**: `compareValues` 함수는 **숫자**와 **문자열**을 받아 두 값을 비교하여 결과를 출력하는 함수입니다. 
+// **문제 설명**: `compareValues` 함수는 **숫자**와 **문자열**을 받아 두 값을 비교하여 결과를 출력하는 함수입니다.
 // 숫자가 크면 `"Number is larger"`, 문자열의 길이가 길면 `"String is larger"`를 반환하도록 하세요.
 // 함수 정의
 {
-  const compareValues = (v1: number, v2: string): string => v1 > v2.length ? "Number is larger" : "String is larger";
+  const compareValues = (v1: number, v2: string): string =>
+    v1 > v2.length ? "Number is larger" : "String is larger";
 
   // 함수 호출
   const result = compareValues(10, "Hello");
@@ -138,7 +137,7 @@ console.log(combined); // "HelloWorld"
 // ---
 
 // ### **문제 10: 다중 조건을 처리하는 조건문 함수**
-// **문제 설명**: `checkValue` 함수는 **숫자**, **문자열**, **불리언** 값을 인자로 받습니다. 
+// **문제 설명**: `checkValue` 함수는 **숫자**, **문자열**, **불리언** 값을 인자로 받습니다.
 // 이 값이 숫자라면 `"It's a number"`, 문자열이라면 `"It's a string"`, 불리언이라면 `"It's a boolean"`을 반환하도록 하세요.
 // 함수 정의
 {
@@ -146,9 +145,9 @@ console.log(combined); // "HelloWorld"
     if (typeof value === "number") return "It's a number";
     else if (typeof value === "string") return "It's a string";
     else if (typeof value === "boolean") return "It's a boolean";
-    else return "Invalid Value"; // 에외 처리 안해주면 반환값이 스트링이라는거에 오류가 뜨며 실행불가. 리턴하지 않는 경우가 가능하기 때문에 
+    else return "Invalid Value"; // 에외 처리 안해주면 반환값이 스트링이라는거에 오류가 뜨며 실행불가. 리턴하지 않는 경우가 가능하기 때문에
     // throw new Error("Invalid");  // 또는 이렇게 처리...
-  }
+  };
 
   // 함수 호출
   const result = checkValue(true);
