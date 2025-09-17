@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "SfHambakneun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JejuDoldam";
+  src: url("../assets/fonts/EF_jejudoldam_OTF_.woff"),
+    url("../assets/fonts/EF_jejudoldam\(OTF\).woff2");
+}
+.Sf-Hambakneun {
+  font-family: "SfHambakneun";
+}
+.doldam {
+  font-family: "JejuDoldam";
+}
+.nanum-pen-script-regular {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
