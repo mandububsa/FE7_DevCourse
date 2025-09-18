@@ -25,14 +25,16 @@ import CheckBox from "./components/html/CheckBox";
 export default function App() {
   return (
     <div className="center">
-      <Input placeholder="Enter Todo List" />
+      <Input type="text" placeholder="Enter Todo List" />
 
       <Button>Add</Button>
       <Button className="bg-[#ED4848]">Cancel</Button>
       <Button className="bg-[#7D48ED]">Success</Button>
 
       <CheckBox>
-        I agree with <b>terms</b> and <b>policies.</b>
+        <span>
+          I agree with <strong>terms</strong> and <strong>policies</strong>.
+        </span>
       </CheckBox>
     </div>
   );

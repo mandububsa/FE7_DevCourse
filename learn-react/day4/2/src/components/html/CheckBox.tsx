@@ -1,16 +1,17 @@
-type CheckBoxProps = React.ComponentPropsWithoutRef<"input">;
+type CheckBoxProps = Omit<React.ComponentPropsWithoutRef<"input">, "type">;
 
-export default function CheckBox({ children }: CheckBoxProps) {
+export default function CheckBox(props: CheckBoxProps) {
+  const { children = "I Agree", ...rest } = props;
   return (
-    <label className="inter flex items-center gap-2 cursor-pointer">
+    <div className="flex items-center gap-2">
       <input
+        id="chk"
         type="checkbox"
-        className="appearance-none rounded border border-[#4F4F4F] bg-white w-[20.03px] h-[20.03px] 
-       checked:bg-[#4F4F4F] cursor-pointer
-         "
+        className="appearance-none rounded-[5px] border border-[#4F4F4F] bg-[#4F4F4F] w-5 h-5
+        checked:bg-[url('/check.svg')] checked:bg-no-repeat checked:bg-center cursor-pointer"
+        {...rest}
       />
-
-      {children}
-    </label>
+      <label htmlFor="chk">{children}</label>
+    </div>
   );
 }
