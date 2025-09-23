@@ -46,3 +46,4 @@ export default todoSlice.reducer;
 // [_, set_]=useState({});
 
 // setObj({name:"", age:10})
+// items = [1, 2, 3]
