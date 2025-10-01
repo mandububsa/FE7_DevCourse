@@ -1,0 +1,23 @@
+<!-- ### 12. **문제 12: 새로운 `li` 항목을 앞에 추가하기**
+`<ul>` 요소의 첫 번째 자식으로 "첫 번째 항목"이라는 텍스트를 가진 `<li>` 요소를 추가하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 12</title>
+  </head>
+  <body>
+    <ul>
+      <li>기존 항목 1</li>
+      <li>기존 항목 2</li>
+    </ul>
+    <script>
+      // 여기에 코드를 작성하세요
+      const newLi = document.createElement("li");
+      newLi.innerText = "첫 번째 항목";
+      const parent = document.querySelector("ul");
+      const fsLi = parent.firstElementChild;
+      parent.insertBefore(newLi, fsLi);
+    </script>
+  </body>
+</html>

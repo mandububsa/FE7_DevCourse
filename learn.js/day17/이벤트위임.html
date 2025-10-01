@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>첫 번째 항목</li>
+      <li>두 번째 항목</li>
+    </ul>
+    <button>추가</button>
+    <script>
+      const liEls = document.querySelectorAll("li");
+      liEls.forEach((el) => {
+        el.addEventListener("click", function () {
+          if (this.style.textDecoration === "line-through")
+            this.style.textDecoration = "";
+          else this.style.textDecoration = "line-through";
+        });
+      });
+      const buttonEl = document.querySelector("button");
+      buttonEl.addEventListener("click", funciton() {
+        const liEl = document.createElement("li");
+        liEl.innerText = "새로운 요소";
+
+        const ulEl = document.querySelector("ul");
+        ulEl.appendChild(liEl);
+      });
+    </script>
+  </body>
+</html>

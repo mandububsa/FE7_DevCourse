@@ -1,0 +1,22 @@
+<!-- ### 6. **문제 6: 새로운 목록 항목 추가하기**
+### 문제 설명
+`<ul>` 요소에 새로운 `<li>` 항목을 추가하세요. 추가된 항목의 내용은 "새로운 항목"입니다. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 6</title>
+  </head>
+  <body>
+    <ul>
+      <li>기존 항목</li>
+    </ul>
+    <script>
+      // 여기에 코드를 작성하세요
+      const ul = document.querySelector("ul");
+      const li = document.createElement("li");
+      li.textContent = "새로운 항목";
+      ul.appendChild(li);
+    </script>
+  </body>
+</html>

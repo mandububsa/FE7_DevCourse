@@ -1,0 +1,20 @@
+<!-- ### 2. **문제 2: 새로운 요소 추가하기**
+### 문제 설명
+`<div>` 요소를 새로 생성하여, 그 안에 "새로운 콘텐츠"라는 텍스트를 추가하고 `<body>`의 마지막 자식으로 삽입하세요.
+ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 2</title>
+  </head>
+  <body>
+    <script>
+      const newDiv = document.createElement("div");
+      newDiv.textContent = "새로운 콘텐츠";
+      const body = document.querySelector("body");
+      body.appendChild(newDiv);
+    </script>
+  </body>
+</html>

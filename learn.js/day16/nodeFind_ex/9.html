@@ -1,0 +1,22 @@
+<!-- ### 9. **문제 9: 텍스트 내용으로 요소 찾기**
+텍스트 내용이 "사용자"인 요소를 찾아 콘솔에 출력하세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>문제 9</title>
+  </head>
+  <body>
+    <div>관리자</div>
+    <div>사용자</div>
+    <div>게스트</div>
+    <script>
+      // 여기에 코드를 작성하세요
+      const divEls = document.querySelectorAll("div");
+      const toArr = Array.from(divEls);
+      toArr.forEach((el) => {
+        if (el.innerText === "사용자") console.log(el);
+      });
+    </script>
+  </body>
+</html>
